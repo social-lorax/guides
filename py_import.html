@@ -2,7 +2,7 @@
 <html>
 <head><meta charset="utf-8" />
 
-<title>i2</title>
+<title>py_import</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -13082,11 +13082,250 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><a href="https://social-lorax.github.io/guides/index.html">Return to Main Page</a></p>
-<p><img src="https://github.com/social-lorax/howto_codebooks/blob/master/images/python/i2_main.png?raw=true" alt=""></p>
-<p><img src="https://github.com/social-lorax/howto_codebooks/blob/master/images/index/underline.gif?raw=true" alt=""></p>
-<p><a href="https://social-lorax.github.io/guides/py_import.html">Importing Data</a></p>
-<p><a href="https://social-lorax.github.io/guides/py_pandas.html">Pandas</a></p>
+<p><a href="https://social-lorax.github.io/guides/index_py.html">Return to Main Page</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pip install pandas </span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pip install gapminder</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="kn">from</span>  <span class="nn">gapminder</span> <span class="kn">import</span> <span class="n">gapminder</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Data-in-Python">Data in Python<a class="anchor-link" href="#Data-in-Python">&#182;</a></h1><h3 id="Equity">Equity<a class="anchor-link" href="#Equity">&#182;</a></h3><ul>
+<li>Where does this data come from?</li>
+<li>Why was this data collected?</li>
+<li>How was this data generated?</li>
+<li>Is this data demographically representative?</li>
+<li>Who is included and who is excluded from this data?</li>
+<li>Whose voices, lives, and experiences are missing?</li>
+<li>How much can this data be disaggregated by race, gender, ethnicity, etc.?</li>
+<li>Are the categories mutually exclusive and fully inclusive?</li>
+<li>Are there “other” categories and, if so, who does that include?</li>
+<li>Who stands to benefit from this data?</li>
+<li>Who might be harmed by the collection or publication of this data?</li>
+</ul>
+<p>(See more in Urban Institute’s <a href="https://www.urban.org/research/publication/do-no-harm-guide-applying-equity-awareness-data-visualization/view/full_report">Do No Harm Guide</a>)</p>
+<p><img src="https://github.com/social-lorax/howto_codebooks/blob/master/images/underlines/python_underline.png?raw=true" alt=""></p>
+<h1 id="Importing">Importing<a class="anchor-link" href="#Importing">&#182;</a></h1><p><code>pandas</code> covers the basics like csv files</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;path/to/file.csv&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;url&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><br></p>
+<p><code>pandas</code> can also deal with excel files</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#pip install xlrd</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">pd</span><span class="o">.</span><span class="n">read_excel</span><span class="p">(</span><span class="s2">&quot;path/to/file.xlxs&quot;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://github.com/social-lorax/howto_codebooks/blob/master/images/underlines/python_underline.png?raw=true" alt=""></p>
+<h1 id="Creating">Creating<a class="anchor-link" href="#Creating">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">data_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;County&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Canada&quot;</span><span class="p">,</span> <span class="s2">&quot;Mexico&quot;</span><span class="p">],</span>
+             <span class="s2">&quot;Captial&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Washington D.C.&quot;</span><span class="p">,</span> <span class="s2">&quot;Ottawa&quot;</span><span class="p">,</span> <span class="s2">&quot;Ciudad de Mexico&quot;</span><span class="p">],</span>
+             <span class="s2">&quot;Population_mil&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">328.2</span><span class="p">,</span> <span class="mf">37.59</span><span class="p">,</span> <span class="mf">127.6</span><span class="p">]}</span>
+
+<span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data_dict</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[2]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>County</th>
+      <th>Captial</th>
+      <th>Population_mil</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>United States</td>
+      <td>Washington D.C.</td>
+      <td>328.20</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Canada</td>
+      <td>Ottawa</td>
+      <td>37.59</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Mexico</td>
+      <td>Ciudad de Mexico</td>
+      <td>127.60</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://github.com/social-lorax/howto_codebooks/blob/master/images/underlines/python_underline.png?raw=true" alt=""></p>
+<h1 id="Exporting">Exporting<a class="anchor-link" href="#Exporting">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">index</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="https://github.com/social-lorax/howto_codebooks/blob/master/images/underlines/python_underline.png?raw=true" alt=""></p>
 
 </div>
 </div>
